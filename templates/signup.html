@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class='signup'>SIGN UP
+  
+    <form method="POST">
+        <h2>Create Your Account</h2>
+       <input type="text" name="username" placeholder='Username*' value="{{username}}">
+        <p class='error'>{{ error_username }}</p>
+
+       <input type="text" name="password" placeholder="Password*" value="{{password}}">
+        <p class="error">{{ error_password }}</p>
+
+        <input type="text" name="confirm_password" placeholder="Confirm Password " value="{{confirm_password}}">
+        <p class="error">{{ error_confirmpassword }}</p>
+        
+        <input type="text" name="email" placeholder="Email" value="{{email}}">
+        <p class="error">{{ error_email }}</p>
+        
+        <input type="submit" value='sign up'>
+    </form>
+
+    
+</div>
+
+
+{% endblock %}

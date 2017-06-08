@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+
+{% if username %}
+    <h3>Welcome, {{username}}!</h3>
+    <img src="https://www.dropbox.com/s/dh472q3sskebgqh/IMG_20161029_122356.jpg?dl=0" alt="welcome"/>
+c    
+{% else %}
+    
+    <p>Please <a href="signup.html">signup</a> or <a href="signin.html">signin</a>
+    
+{% endif %}
+    
+
+{% endblock %}
