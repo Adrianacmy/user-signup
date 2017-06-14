@@ -1,5 +1,5 @@
 from flask import Flask, request, redirect, render_template
-
+import re
 # app = Flask(__name__)
 # app.config['DEBUG'] = True
 
@@ -29,24 +29,25 @@ def signup():
     error_confirm_password = ''
     error_email = ''
 
-    if not username:
-        error_username = 'username error'
+    if not re.match('^[a-zA-Z]\w{2,19}$', username):
+        error_username = 'Must start with a letter and contains 3 to 20 characters(letters,underscores, numbers)'
         username = ''
-    if not password:
-        error_password = 'password error'
+    if not re.match('^[a-zA-Z]\w{2,19}$', password):
+        error_password = 'Must start with letter, contains 3 to 20 characters(letters, numbers, underscores)'
         password = ''
     if confirm_password != password:
-        error_confirm_password = 'confirm_password error'
+        error_confirm_password = 'Password do not match'
         confirm_password = ''
-    if not email:
-        email = ''
-        error_email = 'email error'
-    
+    if email:
+        if not re.match('^\w+([-+]\w+)*@\w+([-]\w+)*\.\w+([-]\w+)*${2, 19}', email):
+            email = ''
+            error_email = 'Invalid email'
+
     if not error_username and not error_password and not error_confirm_password and not error_email:
         return redirect('/welcome?username={0}'.format(username))
     else:
         return render_template(
-            'signup.html', 
+            'signup.html',
             username = username,
             password = password,
             confirm_password = confirm_password,
@@ -56,7 +57,7 @@ def signup():
             error_confirm_password = error_confirm_password,
             error_email = error_email
             )
-    
+
 
 @app.route('/welcome')
 def welcome():
