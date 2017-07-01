@@ -1,0 +1,22 @@
+body{
+    padding: 0;
+    margin-top: 2em;
+}
+
+.signup {
+    text-align: center;
+}
+
+.error{
+    color: pink;
+}
+
+h3{
+    text-align: center;
+}
+.required{
+    font-style: italic;
+    color: greenyellow;
+    /*text-align: left;*/
+
+}

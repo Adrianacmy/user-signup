@@ -4,13 +4,13 @@
 
 {% if username %}
     <h3>Welcome, {{username}}!</h3>
-    <img src="https://www.dropbox.com/s/dh472q3sskebgqh/IMG_20161029_122356.jpg?dl=0" alt="welcome"/>
-c    
+    <!--<img src="https://www.dropbox.com/s/dh472q3sskebgqh/IMG_20161029_122356.jpg?dl=0" alt="welcome"/>-->
+
 {% else %}
-    
-    <p>Please <a href="signup.html">signup</a> or <a href="signin.html">signin</a>
-    
+    <p class="signup">Don't have an acount yet?</p>
+    <p class="signup">Please <a href="/signup">signup</a></p>
+
 {% endif %}
-    
+
 
 {% endblock %}

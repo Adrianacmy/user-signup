@@ -1,10 +1,11 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class='signup'>SIGN UP
+<div class='signup' >SIGN UP
 
     <form method="POST">
         <h2>Create Your Account</h2>
+        <p class="required">*: required</p>
        <input type="text" name="username" placeholder='Username*' value="{{username}}">
         <p class='error'>{{ error_username }}</p>
 
