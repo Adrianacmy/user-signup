@@ -32,7 +32,7 @@ def signup():
         username = ''
 
     if not re.match('^\w{3,19}$', password):
-        error_password = 'Must start with letter, contains 3 to 20 characters(letters, numbers, underscores)'
+        error_password = 'Must contains 3 to 20 characters(letters, numbers, underscores)'
         password = ''
 
     if confirm_password != password:
