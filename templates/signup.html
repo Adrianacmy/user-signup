@@ -6,13 +6,13 @@
     <form method="POST">
         <h2>Create Your Account</h2>
         <p class="required">*: required</p>
-        <input type="text" name="username" placeholder='Username*' value="{{username}}">
+        <input type="text" name="username" placeholder='Username*' value="{{username}}" autofocus />
         <p class='error'>{{ error_username }}</p>
 
         <input type="text" name="password" placeholder="Password*" value="{{password}}">
         <p class="error">{{ error_password }}</p>
 
-        <input type="text" name="confirm_password" placeholder="Confirm Password " value="{{confirm_password}}">
+        <input type="text" name="confirm_password" placeholder="Confirm Password* " value="{{confirm_password}}">
         <p class="error">{{ error_confirm_password }}</p>
 
         <input type="text" name="email" placeholder="Email" value="{{email}}">

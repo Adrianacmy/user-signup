@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 from flask import Flask, request, redirect, render_template
 import re
 
@@ -47,6 +49,8 @@ def signup():
     if not error_username and not error_password and not error_confirm_password and not error_email:
         return redirect('/welcome?username={0}'.format(username))
     else:
+        password = ''
+        confirm_password = ''
         return render_template(
             'signup.html',
             username = username,
