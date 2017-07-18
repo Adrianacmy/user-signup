@@ -35,14 +35,18 @@ def signup():
         error_password = 'Must contains 3 to 20 characters(letters, numbers, underscores)'
         password = ''
 
-    if confirm_password != password:
-        error_confirm_password = 'Password does not match'
-        confirm_password = ''
+    else:
+        if confirm_password != password:
+            error_confirm_password = 'Password does not match'
+
+            confirm_password = ''
+
 
     if email:
-        if not re.match('^\w+([-+]\w+)*@\w+([-]\w+)*\.\w+([-]\w+)*${2, 19}', email):
-            email = ''
-            error_email = 'Invalid email'
+        if len(email) >= 3 and len(email) <= 20:
+            if not re.match(r'^[a-zA-Z0-9+-_!.]+@[a-zA-Z0-9]+\.[a-z]+[.]*[a-z]*$', email):
+                email = ''
+                error_email = 'Invalid email'
 
     if not error_username and not error_password and not error_confirm_password and not error_email:
         return redirect('/welcome?username={0}'.format(username))
