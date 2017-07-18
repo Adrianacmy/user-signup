@@ -34,11 +34,9 @@ def signup():
     if not re.match('^\w{3,19}$', password):
         error_password = 'Must contains 3 to 20 characters(letters, numbers, underscores)'
         password = ''
-
     else:
         if confirm_password != password:
             error_confirm_password = 'Password does not match'
-
             confirm_password = ''
 
 
